@@ -282,11 +282,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (consultationForm) {
         consultationForm.addEventListener('submit', (e) => {
             e.preventDefault();
-
             hasSubmitted = true;
 
             const submitError = document.querySelector('#submitError');
-
             const isPhoneValid = validatePhoneNumber();
             const isEmailValid = validateEmail();
 
@@ -295,26 +293,40 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            submitError.classList.remove('active');
-            emailError.classList.remove('active');
-            phoneError.classList.remove('active');
+            const formData = new FormData(consultationForm);
 
-            emailField.classList.remove('invalid-field', 'valid-field');
-            phoneInputField.classList.remove('invalid-number', 'valid-number');
+            if (itiInstance) {
+                formData.set('phone', itiInstance.getNumber());
+            }
 
-            const fullNumber = itiInstance
-                ? itiInstance.getNumber()
-                : phoneInputField.value;
+            fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            })
+                .then(() => {
+                    submitError.classList.remove('active');
+                    emailError.classList.remove('active');
+                    phoneError.classList.remove('active');
 
-            console.log("OK:", fullNumber);
+                    emailField.classList.remove('invalid-field', 'valid-field');
+                    phoneInputField.classList.remove('invalid-number', 'valid-number');
 
-            closeModal();
-            consultationForm.reset();
-            const successModal = document.querySelector('#successModal');
-            successModal.classList.add('active');
-            emailField.classList.remove('invalid-field', 'valid-field');
-            phoneInputField.classList.remove('invalid-number', 'valid-number');
-            hasSubmitted = false;
+                    const fullNumber = itiInstance ? itiInstance.getNumber() : phoneInputField.value;
+                    console.log("OK:", fullNumber);
+
+                    closeModal();
+                    consultationForm.reset();
+                    const successModal = document.querySelector('#successModal');
+                    successModal.classList.add('active');
+
+                    hasSubmitted = false;
+                })
+                .catch((error) => {
+                    alert("Помилка відправки: " + error);
+                    console.error("Submission error:", error);
+                    submitError.classList.add('active');
+                });
         });
     }
 

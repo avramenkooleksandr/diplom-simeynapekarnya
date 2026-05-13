@@ -70,7 +70,9 @@
 
           <h2 class="modal-title">Залиште заявку і дізнайтеся<br>докладніше про франшизу</h2>
 
-          <form class="modal-form" id="consultationForm">
+          <form class="modal-form" id="consultationForm" name="consultation" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="consultation" />
+            
             <div class="form-group">
               <input type="text" name="name" placeholder="Ім'я" required>
             </div>
