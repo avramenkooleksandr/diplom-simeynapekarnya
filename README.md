@@ -16,7 +16,7 @@
 
 **Опублікований продукт**
 
-Сайт можливо переглянути за цим [посиланням](https://avramenkooleksandr.github.io/diplom-simeynapekarnya/)
+Сайт можливо переглянути за цим [посиланням](https://family-bakery-o.netlify.app/)
 
 
 
