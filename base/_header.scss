@@ -1,0 +1,135 @@
+.header {
+    background-color: #ffa000;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.logo img {
+    height: 55px;
+    width: auto;
+    display: block;
+}
+
+.menu {
+    display: flex;
+    gap: 60px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #424242;
+    font-size: 16px;
+    font-family: sans-serif;
+    transition: color 0.4s ease, opacity 0.3s ease, font-weight 0.3s ease;
+    position: relative;
+}
+
+.menu a.active {
+    color: #ffe247 !important;
+    font-weight: bold;
+    opacity: 1;
+}
+
+.burger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #000;
+}
+
+@media (max-width: 991px) {
+    .burger {
+        display: block;
+        z-index: 1002;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        gap: 0;
+        text-align: left;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.4s ease-in-out, opacity 0.3s ease;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .menu.open {
+        max-height: 500px;
+        opacity: 1;
+        padding: 0;
+    }
+
+    .menu li {
+        width: 100%;
+        list-style: none;
+    }
+
+    .menu a {
+        display: block;
+        padding: 18px 25px;
+        font-size: 18px;
+        color: #000000;
+        width: 100%;
+        text-decoration: none;
+        border-bottom: 1px solid #f0f0f0;
+        transition: all 0.3s ease;
+        box-sizing: border-box;
+    }
+
+    .menu a:hover {
+        background-color: #333333;
+        color: #ffffff !important;
+        padding-left: 30px;
+    }
+
+    .menu a.active {
+        background-color: #f9f9f9;
+        color: #ffa000 !important;
+        font-weight: bold;
+        border-left: 4px solid #ffa000;
+        padding-left: 21px;
+    }
+
+    .menu li:last-child a {
+        border-bottom: none;
+    }
+}
+
+.scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background-color: #ffe347;
+    width: 0%;
+    z-index: 1001;
+    transition: width 0.1s ease;
+}

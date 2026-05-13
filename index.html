@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Family Bakery</title>
+  <link rel="stylesheet" href="./css/normalize.css" />
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <link rel="icon" href="img/favicon-1.png" sizes="32x32" />
+  <link rel="icon" href="img/favicon-1.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="img/favicon-1.png" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/css/intlTelInput.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="scroll-progress-bar"></div>
+    <div class="container header-container">
+      <div class="logo">
+        <a href="/">
+          <img src="./img/logo.png" alt="Family Bakery" />
+        </a>
+      </div>
+
+      <nav class="nav">
+        <ul class="menu">
+          <li><a href="#1">Про наш бізнес</a></li>
+          <li><a href="#2">Асортимент</a></li>
+          <li><a href="#3">Процес запуску</a></li>
+          <li><a href="#4">Історія відкриттів</a></li>
+          <li><a href="#5">Контакти</a></li>
+        </ul>
+      </nav>
+
+      <button class="burger" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="1">
+      <div class="hero-video">
+        <video autoplay muted loop playsinline>
+          <source src="video/1.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <img src="./img/logo2.png" alt="Family Bakery" class="hero-logo" />
+
+        <h1>Успішний бізнес з першого дня відкриття</h1>
+
+        <p>
+          Партнерство з нами – це робота за перевіреною бізнес-моделлю і<br>впевненість у стабільному прибутку
+        </p>
+
+        <a href="#" class="btn btn-hero js-open-modal">Отримати консультацію</a>
+      </div>
+
+      <div class="modal-overlay" id="consultationModal">
+        <div class="modal-content">
+          <button class="modal-close" id="closeConsultationModal" aria-label="Закрити">&times;</button>
+
+          <h2 class="modal-title">Залиште заявку і дізнайтеся<br>докладніше про франшизу</h2>
+
+          <form class="modal-form" id="consultationForm">
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Ім'я" required>
+            </div>
+
+            <div class="form-group">
+              <input type="email" id="email" name="email" placeholder="Email" required>
+
+              <div class="field-error" id="emailError">
+                <span class="error-icon">✖</span>
+                <span>Invalid email format</span>
+              </div>
+            </div>
+
+            <div class="form-group phone-wrapper">
+              <input type="tel" id="phone" name="phone" required>
+
+              <div class="field-error" id="phoneError">
+                <span class="error-icon">✖</span>
+                <span>Invalid phone format</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <input type="text" name="city" placeholder="Місто" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Почати свій власний бізнес!</button>
+            <div class="submit-error" id="submitError">
+              <span class="error-icon">✖</span>
+              <span>Your submission failed because of an error.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="success-overlay" id="successModal">
+        <div class="success-content">
+          <div class="success-icon">✔</div>
+          <h2>Дякуємо за вашу заявку!</h2>
+          <br>
+          <h3>
+            <b>Наш менеджер найближчим часом зв’яжеться з вами та надасть усю необхідну інформацію.</b>
+          </h3>
+          <p>Щоб завжди бути в курсі наших новин та пропозицій, підписуйтеся на соціальні мережі. Ми завжди раді вам!</p>
+
+          <div class="success-socials">
+            <a href="https://www.facebook.com/fransua.ukraine" target="_blank" aria-label="Facebook 1">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.facebook.com/familybakery_ua" target="_blank" aria-label="Facebook 2">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/family_bakery_ua/" target="_blank" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+
+          <button class="success-btn" id="successCloseBtn">
+            На головну
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing">
+      <div class="pricing-grid">
+
+        <div class="card">
+          <h3 class="card-title">Сімейна пекарня</h3>
+
+          <div class="item">
+            <p class="label">Паушальний внесок</p>
+            <p class="value">$5 000</p>
+          </div>
+
+          <div class="item">
+            <p class="label">Інвестиції</p>
+            <p class="value">від $20 000</p>
+          </div>
+
+          <div class="item">
+            <p class="label">Період окупності</p>
+            <p class="value">від 6 місяців</p>
+          </div>
+
+          <div class="item">
+            <p class="label">Прибуток за місяць</p>
+            <p class="value">$4000</p>
+          </div>
+
+          <div class="item">
+            <p class="label">Роялті</p>
+            <p class="value">0</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">Сімейна пекарня + піца Take&Bake</h3>
+
+          <div class="item">
+            <p class="label">Паушальний внесок</p>
+            <p class="value">$6 000</p>
+          </div>
+
+          <div class="item">
+            <p class="label">Інвестиції</p>
+            <p class="value">від $21 000</p>
+          </div>
+
+          <div class="item">
+            <p class="label">Період окупності</p>
+            <p class="value">від 6 місяців</p>
+          </div>
+
+          <div class="item">
+            <p class="label">Прибуток за місяць</p>
+            <p class="value">$5000</p>
+          </div>
+
+          <div class="item">
+            <p class="label">Роялті</p>
+            <p class="value">0</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">Сімейна пекарня + Сімейна піца</h3>
+
+          <div class="item">
+            <p class="label">Паушальний внесок</p>
+            <p class="value">$8 000</p>
+          </div>
+
+          <div class="item">
+            <p class="label">Інвестиції</p>
+            <p class="value">від $27 000</p>
+          </div>
+
+          <div class="item">
+            <p class="label">Період окупності</p>
+            <p class="value">від 6 місяців</p>
+          </div>
+
+          <div class="item">
+            <p class="label">Прибуток за місяць</p>
+            <p class="value">$6000</p>
+          </div>
+
+          <div class="item">
+            <p class="label">Роялті «Сімейна пекарня»</p>
+            <p class="value">3%*</p>
+          </div>
+
+          <p class="note">
+            (роялті виплачується виключно з продажів піци, на основний асортимент «Сімейна пекарня» роялті не
+            розповсюджується)
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="grants">
+      <div class="container section-column">
+        <h2 class="grants-title">Сімейна пекарня</h2>
+        <br><br><br>
+        <h3 class="grants-subtitle">
+          Доступне кредитування на вигідних умовах! <br />
+          Допомагаємо в отриманні грантів для ветеранів або членів родини
+          військовослужбовців
+        </h3>
+        <p class="grants-amount">до 1 000 000 грн</p>
+      </div>
+    </section>
+
+    <section class="advantages">
+      <div class="container section-column">
+        <h2 class="advantages-main-title">
+          Переваги франшизи<br />
+          «Сімейна пекарня»
+        </h2>
+
+        <div class="advantages-grid">
+          <div class="advantage-card">
+            <h3>Гарантії</h3>
+            <hr class="divider" />
+            <ul class="advantage-list">
+              <li>Більше 16 років на ринку</li>
+              <li>12 років на ринку франчайзингу</li>
+              <li>
+                Більше ніж 450 успішно діючих пекарень (ТМ «Франс.уа»,
+                «Булочная №1» та «Сімейна пекарня»)
+              </li>
+            </ul>
+          </div>
+
+          <div class="advantage-card">
+            <h3>Надійність</h3>
+            <hr class="divider" />
+            <ul class="advantage-list">
+              <li>Власне виробництво</li>
+              <li>90% української сировини</li>
+              <li>Власна логістика</li>
+            </ul>
+          </div>
+
+          <div class="advantage-card">
+            <h3>Підтримка</h3>
+            <hr class="divider" />
+            <ul class="advantage-list">
+              <li>Центри навчання персоналу</li>
+              <li>Стандарти продажів</li>
+              <li>Стандарти випікання</li>
+              <li>Відомий бренд</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="milestones" id="4">
+      <div class="container">
+        <div class="milestones-grid">
+
+          <div class="milestone-card">
+            <div class="milestone-dot"></div>
+            <div class="milestone-year">2009</div>
+            <p class="milestone-text">Відкрили першу пекарню</p>
+          </div>
+
+          <div class="milestone-card">
+            <div class="milestone-dot"></div>
+            <div class="milestone-year">2014</div>
+            <p class="milestone-text">Вийшли на ринок франшиз</p>
+          </div>
+
+          <div class="milestone-card">
+            <div class="milestone-dot"></div>
+            <div class="milestone-year">2019</div>
+            <p class="milestone-text">Стали найуспішнішою франшизою року</p>
+          </div>
+
+          <div class="milestone-card">
+            <div class="milestone-dot"></div>
+            <div class="milestone-year">2025</div>
+            <p class="milestone-text">Більше 500 пекарень по всій Україні</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="assortment" id="2">
+      <div class="hero-overlay assortment-overlay"></div>
+
+      <div class="container section-column">
+        <div class="assortment-text">
+          <h2 class="assortment-title">
+            Більше <span class="highlight">50 видів</span> випічки<br />
+            за доступною ціною
+          </h2>
+          <p class="assortment-desc">
+            Широкий асортимент за доступною ціною від (3,50 грн), вчасні
+            поставки – те, за що нас вибирають клієнти. Ми пропонуємо більше
+            50 найменувань продукції.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item" style="
+                background-image: url(&quot;https://family-bakery.com.ua/wp-content/uploads/2023/04/Mask_Group-1-1-1024x649.png&quot;);
+              ">
+            <div class="gallery-overlay"></div>
+            <div class="gallery-content">
+              <h3>Солодка випічка</h3>
+              <a href="#" class="btn-gallery" data-category="sweet">Переглянути</a>
+            </div>
+          </div>
+          <div class="gallery-item" style="
+                background-image: url(&quot;https://family-bakery.com.ua/wp-content/uploads/2023/04/Mask_Group-2.webp&quot;);
+              ">
+            <div class="gallery-overlay"></div>
+            <div class="gallery-content">
+              <h3>Ситна випічка</h3>
+              <a href="#" class="btn-gallery" data-category="savory">Переглянути</a>
+            </div>
+          </div>
+          <div class="gallery-item" style="
+                background-image: url(&quot;https://family-bakery.com.ua/wp-content/uploads/2023/04/Mask_Group.webp&quot;);
+              ">
+            <div class="gallery-overlay"></div>
+            <div class="gallery-content">
+              <h3>Хліб</h3>
+              <a href="#" class="btn-gallery" data-category="bread">Переглянути</a>
+            </div>
+          </div>
+          <div class="gallery-item" style="
+                background-image: url(&quot;https://family-bakery.com.ua/wp-content/uploads/2023/04/2020-08-20__0215_1.webp&quot;);
+              ">
+            <div class="gallery-overlay"></div>
+            <div class="gallery-content">
+              <h3>Хот-дог</h3>
+              <a href="#" class="btn-gallery" data-category="hotdog">Переглянути</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox">
+    <button class="lightbox-close"><i class="fas fa-times"></i></button>
+
+    <div class="lightbox-wrapper">
+      <button class="lightbox-prev">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+
+      <div class="lightbox-container">
+        <img id="lightbox-img" src="" alt="Випічка" />
+      </div>
+
+      <button class="lightbox-next">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <section id="3" class="process-section">
+    <div class="container">
+      <h2 class="section-title">Процес запуску <br />франшизи</h2>
+
+      <div class="process-grid">
+        <div class="process-item">
+          <img
+            src="https://family-bakery.com.ua/wp-content/uploads/elementor/thumbs/location-qfstudo08h3zgxi8t1zctzy11ij4tj0d6h2nk42v44.png"
+            alt="icon" />
+          <div class="process-content">
+            <h3>Вибір приміщення</h3>
+            <p>Перевірка майбутнього об'єкта на відповідність критеріям</p>
+          </div>
+        </div>
+
+        <div class="process-item">
+          <img
+            src="https://family-bakery.com.ua/wp-content/uploads/elementor/thumbs/edit-qfstudo04yt2jhnjnjignwu5rbslq6r3wqb1gsuab8.png"
+            alt="icon" />
+          <div class="process-content">
+            <h3>Розробка проєкту</h3>
+            <p>Розробка та візуалізація вашої пекарні</p>
+          </div>
+        </div>
+
+        <div class="process-item">
+          <img
+            src="https://family-bakery.com.ua/wp-content/uploads/elementor/thumbs/money-qfstudo04yt2jhnjnjignwu5rbslq6r3wqb1gsuab8.png"
+            alt="icon" />
+          <div class="process-content">
+            <h3>Розрахунок</h3>
+            <p>Побудова фінансової моделі майбутньої пекарні</p>
+          </div>
+        </div>
+
+        <div class="process-item">
+          <img
+            src="https://family-bakery.com.ua/wp-content/uploads/elementor/thumbs/cooking-qfstudo04yt2jhnjnjignwu5rbslq6r3wqb1gsuab8.png"
+            alt="icon" />
+          <div class="process-content">
+            <h3>Навчання</h3>
+            <p>Навчання персоналу</p>
+          </div>
+        </div>
+
+        <div class="process-item">
+          <img
+            src="https://family-bakery.com.ua/wp-content/uploads/elementor/thumbs/google-docs-qfstudo04yt2jhnjnjignwu5rbslq6r3wqb1gsuab8.png"
+            alt="icon" />
+          <div class="process-content">
+            <h3>Договір</h3>
+            <p>Укладання договору про співпрацю</p>
+          </div>
+        </div>
+
+        <div class="process-item">
+          <img
+            src="https://family-bakery.com.ua/wp-content/uploads/elementor/thumbs/rocket-qfstudo04yt2jhnjnjignwu5rbslq6r3wqb1gsuab8.png"
+            alt="icon" />
+          <div class="process-content">
+            <h3>Запуск та супровід</h3>
+            <p>Підтримка роботи пекарні з дня відкриття</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stats-content">
+          <h2 class="stats-title">
+            Більше <span class="highlight">500</span> пекарень<br />
+            по всій Україні
+          </h2>
+        </div>
+
+        <div class="stats-image">
+          <img src="https://family-bakery.com.ua/wp-content/uploads/2023/04/Group_256.webp" srcset="
+                https://family-bakery.com.ua/wp-content/uploads/2023/04/Group_256.webp         736w,
+                https://family-bakery.com.ua/wp-content/uploads/2023/04/Group_256-600x402.webp 600w,
+                https://family-bakery.com.ua/wp-content/uploads/2023/04/Group_256-300x201.webp 300w
+              " sizes="(max-width: 1024px) 100vw, 800px" alt="Карта пекарень" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="locations-slider">
+    <div class="container">
+      <div class="slider-wrapper">
+        <button class="slider-btn prev-btn" disabled>
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div class="slider-track-container">
+          <div class="slider-track">
+            <div class="slider-card">
+              <div class="card-image">
+                <img
+                  src="https://family-bakery.com.ua/wp-content/uploads/2026/01/imgonline-com-ua-CompressBySize-RB3C0pITt3lz8dd.jpg"
+                  alt="м. Стрий" loading="lazy" />
+              </div>
+              <div class="card-content">
+                <div class="card-date">19.12.2025</div>
+                <cite class="card-address">м. Стрий, на вул. Зелена, 24б</cite>
+              </div>
+            </div>
+
+            <div class="slider-card">
+              <div class="card-image">
+                <img
+                  src="https://family-bakery.com.ua/wp-content/uploads/2026/01/Знімок-екрана-2026-01-07-о-12.26.29.png"
+                  alt="м. Львів" loading="lazy" />
+              </div>
+              <div class="card-content">
+                <div class="card-date">25.11.2025</div>
+                <cite class="card-address">м. Львів , на вул. Чернівецька, 9</cite>
+              </div>
+            </div>
+
+            <div class="slider-card">
+              <div class="card-image">
+                <img
+                  src="https://family-bakery.com.ua/wp-content/uploads/2026/01/imgonline-com-ua-CompressBySize-HtIh22lvDBcQ.jpg"
+                  alt="м. Вінниця , на вул. Максима Шимко, 7а" loading="lazy" />
+              </div>
+              <div class="card-content">
+                <div class="card-date">25.11.2025</div>
+                <cite class="card-address">м. Вінниця , на вул. Максима Шимко, 7а</cite>
+              </div>
+            </div>
+
+            <div class="slider-card">
+              <div class="card-image">
+                <img
+                  src="https://family-bakery.com.ua/wp-content/uploads/2026/01/imgonline-com-ua-CompressBySize-bmNyyYuiooKRjiI.jpg"
+                  alt="м. Львів, на вул. Чорновола , 57" loading="lazy" />
+              </div>
+              <div class="card-content">
+                <div class="card-date">17.11.2025</div>
+                <cite class="card-address">м. Львів, на вул. Чорновола , 57</cite>
+              </div>
+            </div>
+
+            <div class="slider-card">
+              <div class="card-image">
+                <img
+                  src="https://family-bakery.com.ua/wp-content/uploads/2026/01/imgonline-com-ua-CompressBySize-GMSmQgUCm7.jpg"
+                  alt="м. Львів, на вул. Сихівська , 7" loading="lazy" />
+              </div>
+              <div class="card-content">
+                <div class="card-date">7.11.2025</div>
+                <cite class="card-address">м. Львів, на вул. Сихівська , 7</cite>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="slider-btn next-btn">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="other-projects">
+    <div class="container">
+      <div class="projects-wrapper">
+        <div class="projects-content">
+          <h2>Інші успішні проєкти</h2>
+          <p>
+            З 2009 року компанія розвиває декілька успішних брендів у 80-ти
+            містах України. Сьогодні, під торговими марками компанії успішно
+            працюють 450 магазинів, кав'ярень та пекарень. 95 % з них –
+            об'єкти наших партнерів, що працюють за франшизою на найвигідніших
+            в Україні умовах.
+          </p>
+        </div>
+
+        <div class="projects-logos">
+          <img loading="lazy" src="https://family-bakery.com.ua/wp-content/uploads/2023/04/unnamed.webp"
+            alt="Логотип успішного проєкту 1" />
+          <img loading="lazy" src="https://family-bakery.com.ua/wp-content/uploads/2023/04/Logo_Pekarnja.png"
+            alt="Логотип Сімейна Пекарня" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-orange">
+    <div class="container">
+      <div class="cta-container">
+        <img src="https://family-bakery.com.ua/wp-content/uploads/2023/04/unnamed_1.png" alt="Logo" class="cta-logo" />
+        <h2 class="cta-title">Почати свій власний бізнес!</h2>
+        <a href="#" class="cta-btn js-open-modal">Залишити заявку</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="franchise-section">
+    <div class="container">
+      <div class="franchise-grid">
+        <div class="franchise-content">
+          <div class="badge-wrapper">
+            <span class="franchise-badge">Нова франшиза</span>
+          </div>
+
+          <h2 class="franchise-main-title">Від Сімейної пекарні <br>та Франс.уа</h2>
+
+          <p class="franchise-text">
+            Пекарня MARTIN – успішний бізнес з першого дня! Забезпечте собі повернення інвестицій уже протягом <span
+              class="accent-orange">7 місяців.</span><br>
+            Приєднуйтесь до нашої команди та розпочинайте смачний шлях до фінансового успіху
+          </p>
+
+          <a href="https://martin-bakery.com.ua/" class="btn-square" role="button">Детальніше</a>
+        </div>
+        <div class="franchise-image-container">
+          <div class="image-wrapper">
+            <img src="https://family-bakery.com.ua/wp-content/uploads/2023/12/картинка-2.jpg"
+              alt="Martin Bakery Mockup">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="footer-dark" id="5">
+    <div class="container">
+      <div class="footer-center-wrap">
+
+        <div class="footer-group">
+          <p>Гаряча лінія</p>
+          <a href="tel:0800210092" class="link-blue">0800 21 00 92</a>
+          <a href="tel:0687886221" class="link-blue">0687 88 62 21</a>
+        </div>
+
+        <div class="footer-group">
+          <p>Київ та Західний регіон:</p>
+          <p>Юрій Коробка, керівник департаменту з продажів франчайзингу</p>
+          <a href="tel:+380502503464" class="link-blue">+38 050 250 34 64</a>
+          <a href="tel:+380973804807" class="link-blue">+38 097 380 48 07</a>
+        </div>
+
+        <div class="footer-group">
+          <p>Південний та Східний регіон:</p>
+          <p>Михайло Баташвілі, менеджер з продажу франчайзингу</p>
+          <a href="tel:+380676365866" class="link-blue">+38 067 636 58 66</a>
+          <a href="tel:+380953393160" class="link-blue">+38 095 339 31 60</a>
+        </div>
+
+        <div class="footer-group">
+          <p>Відділ закупівель:</p>
+          <p>
+            Юлія Бахтіярова
+            <a href="tel:+380677058714" class="link-blue inline-link">+38 067 705 87 14</a>
+          </p>
+          <a href="mailto:francuaza5@gmail.com" class="link-blue">francuaza5@gmail.com</a>
+        </div>
+
+        <div class="footer-social-circle">
+          <a href="https://www.facebook.com/familybakery_ua#" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="js/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.10/build/js/intlTelInput.min.js"></script>
+</body>
+
+</html>
