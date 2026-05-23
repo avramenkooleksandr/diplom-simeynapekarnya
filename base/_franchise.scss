@@ -1,0 +1,147 @@
+.franchise-section {
+    padding: 100px 0;
+    background-color: #fff;
+
+    &.appeared {
+        .franchise-content {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .franchise-image-container {
+            opacity: 1;
+        }
+    }
+
+    .franchise-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        position: relative;
+    }
+
+    .franchise-content {
+        position: relative;
+        z-index: 2;
+        opacity: 0;
+        transform: translateX(-100px);
+        transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                    opacity 1s ease-out;
+    }
+
+    .badge-wrapper {
+        margin-bottom: 20px;
+    }
+
+    .franchise-badge {
+        background-color: #ffa000;
+        color: #000;
+        padding: 8px 15px;
+        font-weight: 800;
+        font-size: 24px;
+        text-transform: none;
+        display: inline-block;
+    }
+
+    .franchise-main-title {
+        font-size: 56px;
+        font-weight: 900;
+        line-height: 1.1;
+        color: #222;
+        margin-bottom: 30px;
+        letter-spacing: -2px;
+    }
+
+    .franchise-text {
+        font-size: 18px;
+        line-height: 1.5;
+        color: black;
+        margin-bottom: 40px;
+        max-width: 500px;
+    }
+
+    .accent-orange {
+        color: #ffa000;
+        font-weight: 600;
+    }
+
+    .btn-square {
+        display: inline-block;
+        background-color: #222;
+        color: #fff;
+        padding: 18px 45px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 16px;
+        transition: background 0.3s ease;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #000;
+        }
+    }
+
+    .franchise-image-container {
+        position: relative;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 1.5s ease-in-out;
+    }
+
+    .image-wrapper {
+        margin-left: -15%;
+        width: 115%;
+
+        img {
+            width: 105%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    @media (max-width: 1100px) {
+        .franchise-main-title {
+            font-size: 46px;
+        }
+
+        .image-wrapper {
+            margin-left: -5%;
+        }
+    }
+
+    @media (max-width: 991px) {
+        .franchise-grid {
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+
+        .franchise-content {
+            text-align: center;
+        }
+
+        .badge-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-wrapper {
+            margin-left: 0;
+            width: 100%;
+        }
+
+        .franchise-badge {
+            font-size: 26px;
+        }
+
+        .franchise-main-title {
+            font-size: 28px;
+        }
+
+        .franchise-text {
+            font-size: 18px;
+            text-align: left;
+            padding-left: 15px;
+        }
+    }
+}

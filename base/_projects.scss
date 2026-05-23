@@ -1,0 +1,101 @@
+.other-projects {
+    padding: 100px 20px;
+    background-color: #ffffff;
+
+    .projects {
+        &-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        &-content {
+            flex: 0.7;
+            opacity: 0;
+            transform: translateX(100px);
+            transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 1s ease-out;
+
+            h2 {
+                font-size: 42px;
+                color: #222;
+                margin-bottom: 30px;
+                line-height: 1.2;
+                font-family: sans-serif;
+                font-weight: 800;
+            }
+
+            p {
+                font-size: 20px;
+                color: black;
+                line-height: 1.7;
+                margin: 0;
+            }
+        }
+
+        &-logos {
+            flex: 0.8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+
+            img {
+                width: 100%;
+                max-width: 280px;
+                height: auto;
+                object-fit: contain;
+                transition: transform 0.3s ease;
+            }
+        }
+    }
+
+    &.appeared {
+        .projects-content {
+            opacity: 1;
+            transform: translateX(0);
+
+            p {
+                transition-delay: 0.2s;
+            }
+        }
+    }
+
+    @media (max-width: 992px) {
+        .projects {
+            &-wrapper {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+                gap: 40px;
+            }
+
+            &-content {
+                transform: translateX(100px);
+
+                h2 {
+                    font-size: 24px;
+                }
+
+                p {
+                    font-size: 18px;
+                }
+            }
+
+            &-logos {
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+
+                img {
+                    max-width: 240px;
+                }
+            }
+        }
+
+        &.appeared .projects-content {
+            transform: translateX(0);
+        }
+    }
+}

@@ -1,0 +1,93 @@
+.cta {
+    &-orange {
+        background-color: #ff9100;
+        padding: 80px 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        box-sizing: border-box;
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        &.appeared {
+
+            .cta-logo,
+            .cta-title {
+                opacity: 1;
+            }
+
+            .cta-btn {
+                opacity: 1;
+                transform: translateX(0);
+                transition-delay: 0.5s;
+            }
+        }
+
+        @media (max-width: 768px) {
+            padding: 60px 15px;
+        }
+    }
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+        width: 100%;
+    }
+
+    &-logo {
+        max-width: 140px;
+        height: auto;
+        display: block;
+        opacity: 0;
+        transition: opacity 1s ease-in;
+    }
+
+    &-title {
+        color: black;
+        font-size: 46px;
+        font-weight: bold;
+        margin: 0;
+        line-height: 1.2;
+        opacity: 0;
+        transition: opacity 1s ease-in;
+
+        @media (max-width: 768px) {
+            font-size: 32px;
+        }
+    }
+
+    &-btn {
+        display: inline-block;
+        background-color: #ffffff;
+        color: black;
+        padding: 18px 45px;
+        font-size: 20px;
+        font-weight: 700;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        border: none;
+        text-decoration: none;
+        opacity: 0;
+        transform: translateX(-150%);
+        transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.8s ease-out;
+
+        &:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            background-color: #f8f8f8;
+        }
+
+        @media (max-width: 768px) {
+            width: 100%;
+            max-width: 300px;
+        }
+    }
+}
