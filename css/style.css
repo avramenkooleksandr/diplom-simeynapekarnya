@@ -503,47 +503,52 @@
   font-size: 16px;
 }
 @media (max-width: 768px) {
-  .success .success-content {
-    width: 92%;
-    padding: 35px 20px;
+  .success-content {
+    width: 100%;
+    padding: 30px 20px;
     border-radius: 8px;
   }
-  .success .success-content h2 {
-    font-size: 28px;
+  .success-content br {
+    display: none;
+  }
+  .success-content h2 {
+    font-size: 26px;
     line-height: 1.2;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
   }
-  .success .success-content h3 {
-    font-size: 20px;
+  .success-content h3 {
+    font-size: 18px;
     line-height: 1.4;
-    margin-bottom: 18px;
+    margin-bottom: 15px;
+    font-weight: 700;
   }
-  .success .success-content p {
-    font-size: 16px;
+  .success-content p {
+    font-size: 15px;
     line-height: 1.5;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
+    color: #444;
   }
-  .success .success-icon {
-    width: 55px;
-    height: 55px;
-    font-size: 28px;
+  .success-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
     margin-bottom: 15px;
   }
-  .success .success-socials {
+  .success-socials {
     gap: 12px;
-    margin: 20px 0;
+    margin: 15px 0 25px;
     flex-wrap: wrap;
   }
-  .success .success-socials a {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
+  .success-socials a {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
   }
-  .success .success-btn {
+  .success-btn {
     width: 100%;
-    max-width: 260px;
-    padding: 14px 20px;
-    font-size: 15px;
+    max-width: 280px;
+    padding: 15px 20px;
+    font-size: 16px;
   }
 }
 

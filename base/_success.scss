@@ -95,56 +95,60 @@
     }
 
     @media (max-width: 768px) {
-        .success {
-            &-content {
-                width: 92%;
-                padding: 35px 20px;
-                border-radius: 8px;
+        &-content {
+            width: 100%;
+            padding: 30px 20px;
+            border-radius: 8px;
 
-                h2 {
-                    font-size: 28px;
-                    line-height: 1.2;
-                    margin-bottom: 15px;
-                }
-
-                h3 {
-                    font-size: 20px;
-                    line-height: 1.4;
-                    margin-bottom: 18px;
-                }
-
-                p {
-                    font-size: 16px;
-                    line-height: 1.5;
-                    margin-bottom: 18px;
-                }
+            br {
+                display: none;
             }
 
-            &-icon {
-                width: 55px;
-                height: 55px;
-                font-size: 28px;
+            h2 {
+                font-size: 26px;
+                line-height: 1.2;
+                margin-bottom: 12px;
+            }
+
+            h3 {
+                font-size: 18px;
+                line-height: 1.4;
                 margin-bottom: 15px;
+                font-weight: 700;
             }
 
-            &-socials {
-                gap: 12px;
-                margin: 20px 0;
-                flex-wrap: wrap;
-
-                a {
-                    width: 40px;
-                    height: 40px;
-                    font-size: 16px;
-                }
-            }
-
-            &-btn {
-                width: 100%;
-                max-width: 260px;
-                padding: 14px 20px;
+            p {
                 font-size: 15px;
+                line-height: 1.5;
+                margin-bottom: 20px;
+                color: #444;
             }
+        }
+
+        &-icon {
+            width: 60px;
+            height: 60px;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        &-socials {
+            gap: 12px;
+            margin: 15px 0 25px;
+            flex-wrap: wrap;
+
+            a {
+                width: 44px;
+                height: 44px;
+                font-size: 18px;
+            }
+        }
+
+        &-btn {
+            width: 100%;
+            max-width: 280px;
+            padding: 15px 20px;
+            font-size: 16px;
         }
     }
 }
